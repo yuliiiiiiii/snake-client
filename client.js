@@ -6,8 +6,16 @@ const connect = function() {
     port: 50541
   });
   //create a connection with a server using ip and port
-
   conn.setEncoding('utf-8');
+  
+  conn.on('connect', () => {
+    console.log('Successfully connected to game server.')
+  });
+  
+  conn.on('connect', () => {
+    conn.write("Name: YLW");
+  })
+
   conn.on('data', data => {
     console.log(data);
   });
