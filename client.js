@@ -21,7 +21,7 @@ const connect = function() {
     console.log(data);
   });
     
-  return conn; //the connection i have with the server
+  return conn; //the connection i have with the server, allow me to interact with the server - see what i did
 };
 
 module.exports = connect;
