@@ -8,7 +8,7 @@ const setupInput = function (conn) {
   
   connection = conn;
 
-  stdin.on('data', handleUserInput)
+  stdin.on('data', data => handleUserInput(data));
   return stdin; //allow me to listen for keyboard unput and react to it - i can see what i did for my input
 }
 
@@ -27,9 +27,14 @@ const handleUserInput = function(key) {
   }
   if(key === "d") {
     connection.write("Move: right");
+  } 
+  if(key === "1") {
+    connection.write("Say: Hello");
+  }
+  if(key === "2") {
+    connection.write("Say: Gogogo");
   }
 }
-
 
 module.exports = setupInput;
 //No need to export handleUserInput, because it is only called within this file.
